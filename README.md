@@ -91,7 +91,7 @@ If you like [`composer` scripts](https://getcomposer.org/doc/articles/scripts.md
 +  },
 +  "scripts": {
 +    "cs-check": "vendor/bin/php-cs-fixer fix --dry-run --diff -v --ansi",
-+    "cs-fix": "vendor/bin/php-cs-fixer fix --diff -v --ansi",
++    "cs-fix": "vendor/bin/php-cs-fixer fix --diff -v --ansi"
    }
  }
 ```
