@@ -9,7 +9,7 @@ $finder = \PhpCsFixer\Finder::create()
 
 $config
     ->setFinder($finder)
-    ->setCacheFile(__DIR__ . '/.php_cs.cache')
+    ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
 ;
 
 return $config;
