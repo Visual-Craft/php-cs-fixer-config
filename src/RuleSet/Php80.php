@@ -6,7 +6,7 @@ namespace VisualCraft\PhpCsFixerConfig\RuleSet;
 
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
-class Php80 implements RuleSetInterface
+final class Php80 implements RuleSetInterface
 {
     public function name(): string
     {
