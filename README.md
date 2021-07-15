@@ -23,19 +23,25 @@ Create a configuration file `.php-cs-fixer.dist.php` in the root of your project
 ```php
 <?php
 
-$config = \VisualCraft\PhpCsFixerConfig\Factory::fromRuleSet(new \VisualCraft\PhpCsFixerConfig\RuleSet\Php74());
+declare(strict_types=1);
 
-$finder = \PhpCsFixer\Finder::create()
-    ->in(__DIR__)
-    ->name('.php-cs-fixer.dist.php')
+use VisualCraft\PhpCsFixerConfig;
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+    ->append([
+        __DIR__ . '/.php-cs-fixer.dist.php',
+    ])
 ;
 
+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
 $config
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
 ;
 
 return $config;
+
 
 ```
 
@@ -46,16 +52,21 @@ Optionally override rules from a rule set by passing in an array of rules to be 
 ```diff
  <?php
 
--$config = \VisualCraft\PhpCsFixerConfig\Factory::fromRuleSet(new \VisualCraft\PhpCsFixerConfig\RuleSet\Php74());
-+$config = $config = \VisualCraft\PhpCsFixerConfig\Factory::fromRuleSet(new \VisualCraft\PhpCsFixerConfig\RuleSet\Php74([
-+    'strict_comparison' => false,
-+]);
+ declare(strict_types=1);
 
- $finder = \PhpCsFixer\Finder::create()
-     ->in(__DIR__)
-     ->name('.php-cs-fixer.dist.php')
+ use VisualCraft\PhpCsFixerConfig;
+
+ $finder = PhpCsFixer\Finder::create()
+     ->in(__DIR__ . '/src')
+     ->append([
+         __DIR__ . '/.php-cs-fixer.dist.php',
+     ])
  ;
 
+-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
++$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74([
++    'strict_comparison' => false,
++]);
  $config
      ->setFinder($finder)
      ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')

@@ -1,12 +1,17 @@
 <?php
 
-$config = \VisualCraft\PhpCsFixerConfig\Factory::fromRuleSet(new \VisualCraft\PhpCsFixerConfig\RuleSet\Php74());
+declare(strict_types=1);
 
-$finder = \PhpCsFixer\Finder::create()
-    ->in(__DIR__)
-    ->name('.php-cs-fixer.dist.php')
+use VisualCraft\PhpCsFixerConfig;
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+    ->append([
+        __DIR__ . '/.php-cs-fixer.dist.php',
+    ])
 ;
 
+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
 $config
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
