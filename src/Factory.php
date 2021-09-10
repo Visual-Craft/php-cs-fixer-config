@@ -16,13 +16,12 @@ final class Factory
         $config = new Config($ruleSet->name());
 
         $config
-            ->setRiskyAllowed(true)
+            ->setRiskyAllowed($ruleSet->getRiskyAllowed())
             ->setRules(array_merge(
                 $ruleSet->rules(),
                 $overrideRules
             ))
-            ->registerCustomFixers(new \PhpCsFixerCustomFixers\Fixers())
-            ->registerCustomFixers(new \PedroTroller\CS\Fixer\Fixers())
+            ->registerCustomFixers($ruleSet->getCustomFixers())
         ;
 
         return $config;

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace VisualCraft\PhpCsFixerConfig;
 
+use PhpCsFixer\Fixer\FixerInterface;
+
 interface RuleSetInterface
 {
     /**
@@ -17,4 +19,11 @@ interface RuleSetInterface
      * @psalm-return array<string, array|bool>
      */
     public function rules(): array;
+
+    /**
+     * @return iterable<array-key, FixerInterface>
+     */
+    public function getCustomFixers(): iterable;
+
+    public function getRiskyAllowed(): bool;
 }

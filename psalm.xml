@@ -13,4 +13,11 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <MixedReturnTypeCoercion>
+            <errorLevel type="suppress">
+                <directory name="src"/>
+            </errorLevel>
+        </MixedReturnTypeCoercion>
+    </issueHandlers>
 </psalm>

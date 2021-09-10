@@ -97,4 +97,15 @@ final class Php80 implements RuleSetInterface
             'PedroTroller/line_break_between_statements' => true,
         ];
     }
+
+    public function getCustomFixers(): iterable
+    {
+        yield from new \PhpCsFixerCustomFixers\Fixers();
+        yield from new \PedroTroller\CS\Fixer\Fixers();
+    }
+
+    public function getRiskyAllowed(): bool
+    {
+        return true;
+    }
 }
