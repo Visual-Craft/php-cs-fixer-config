@@ -70,7 +70,6 @@ final class Php74 implements RuleSetInterface
             ],
             \PhpCsFixerCustomFixers\Fixer\CommentSurroundedBySpacesFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\DataProviderReturnTypeFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\InternalClassCasingFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoDuplicatedImportsFixer::name() => true,
