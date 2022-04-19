@@ -17,6 +17,7 @@ Pick one of the rule sets:
 
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php74`](src/RuleSet/Php74.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php80`](src/RuleSet/Php80.php)
+* [`VisualCraft\PhpCsFixerConfig\RuleSet\Php81`](src/RuleSet/Php81.php)
 
 Create a configuration file `.php-cs-fixer.dist.php` in the root of your project:
 
