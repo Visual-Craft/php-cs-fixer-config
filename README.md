@@ -17,6 +17,7 @@ Pick one of the rule sets:
 
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php74`](src/RuleSet/Php74.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php80`](src/RuleSet/Php80.php)
+* [`VisualCraft\PhpCsFixerConfig\RuleSet\Php81`](src/RuleSet/Php81.php)
 
 Create a configuration file `.php-cs-fixer.dist.php` in the root of your project:
 
@@ -64,7 +65,7 @@ Optionally override rules from a rule set by passing in an array of rules to be 
  ;
 
 -$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
-+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74([
++$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74(), [
 +    'strict_comparison' => false,
 +]);
  $config
