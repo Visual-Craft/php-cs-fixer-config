@@ -65,7 +65,7 @@ Optionally override rules from a rule set by passing in an array of rules to be 
  ;
 
 -$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
-+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74([
++$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74(), [
 +    'strict_comparison' => false,
 +]);
  $config
