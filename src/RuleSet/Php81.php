@@ -39,7 +39,6 @@ final class Php81 implements RuleSetInterface
             'phpdoc_types_order' => [
                 'null_adjustment' => 'always_last',
             ],
-            'phpdoc_types_order' => true,
             'increment_style' => false,
             'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
             'fopen_flags' => false,
