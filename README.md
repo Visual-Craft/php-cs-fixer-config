@@ -18,6 +18,7 @@ Pick one of the rule sets:
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php74`](src/RuleSet/Php74.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php80`](src/RuleSet/Php80.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php81`](src/RuleSet/Php81.php)
+* [`VisualCraft\PhpCsFixerConfig\RuleSet\Php82`](src/RuleSet/Php82.php)
 
 Create a configuration file `.php-cs-fixer.dist.php` in the root of your project:
 
@@ -35,7 +36,7 @@ $finder = PhpCsFixer\Finder::create()
     ])
 ;
 
-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php82());
 $config
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
