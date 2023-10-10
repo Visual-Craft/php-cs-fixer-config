@@ -6,11 +6,11 @@ namespace VisualCraft\PhpCsFixerConfig\RuleSet;
 
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
-final class Php74 implements RuleSetInterface
+final class Php82 implements RuleSetInterface
 {
     public function name(): string
     {
-        return 'Visual Craft (PHP 7.4)';
+        return 'Visual Craft (PHP 8.2)';
     }
 
     public function rules(): array
@@ -18,13 +18,13 @@ final class Php74 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP74Migration' => true,
-            '@PHP74Migration:risky' => true,
+            '@PHP82Migration' => true,
+            '@PHP80Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
             'doctrine_annotation_braces' => false,
-            '@PHPUnit84Migration:risky' => true,
+            '@PHPUnit100Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [
@@ -78,13 +78,18 @@ final class Php74 implements RuleSetInterface
             \PhpCsFixerCustomFixers\Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoSuperfluousConcatenationFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoUselessCommentFixer::name() => true,
+            \PhpCsFixerCustomFixers\Fixer\NoUselessDirnameCallFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoUselessParenthesisFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\NoUselessStrlenFixer::name() => true,
+            \PhpCsFixerCustomFixers\Fixer\PhpUnitAssertArgumentsOrderFixer::name() => true,
+            \PhpCsFixerCustomFixers\Fixer\PhpUnitDedicatedAssertFixer::name() => true,
+            \PhpCsFixerCustomFixers\Fixer\PhpUnitNoUselessReturnFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\PhpdocTypesTrimFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\SingleSpaceAfterStatementFixer::name() => true,
             \PhpCsFixerCustomFixers\Fixer\SingleSpaceBeforeStatementFixer::name() => true,
+            \PhpCsFixerCustomFixers\Fixer\StringableInterfaceFixer::name() => true,
             'PedroTroller/ordered_with_getter_and_setter_first' => true,
             'PedroTroller/line_break_between_method_arguments' => [
                 'max-args' => false,
