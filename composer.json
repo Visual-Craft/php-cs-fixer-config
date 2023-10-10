@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "friendsofphp/php-cs-fixer": "^3.8",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^3.10",
-        "pedrotroller/php-cs-custom-fixer": "^2.27"
+        "friendsofphp/php-cs-fixer": "^3.34",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.16",
+        "pedrotroller/php-cs-custom-fixer": "^2.33"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.25",
@@ -34,6 +34,10 @@
     "scripts": {
         "cs-check": "vendor/bin/php-cs-fixer fix --dry-run --diff -v --ansi",
         "cs-fix": "vendor/bin/php-cs-fixer fix --diff -v --ansi",
-        "psalm": "vendor/bin/psalm"
+        "psalm": "vendor/bin/psalm",
+        "lint": [
+            "@cs-check",
+            "@psalm"
+        ]
     }
 }
