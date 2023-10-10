@@ -36,7 +36,7 @@ $finder = PhpCsFixer\Finder::create()
     ])
 ;
 
-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php74());
+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php82());
 $config
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
