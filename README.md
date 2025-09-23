@@ -20,6 +20,7 @@ Pick one of the rule sets:
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php81`](src/RuleSet/Php81.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php82`](src/RuleSet/Php82.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php83`](src/RuleSet/Php83.php)
+* [`VisualCraft\PhpCsFixerConfig\RuleSet\Php84`](src/RuleSet/Php84.php)
 
 Create a configuration file `.php-cs-fixer.dist.php` in the root of your project:
 
@@ -37,7 +38,7 @@ $finder = PhpCsFixer\Finder::create()
     ])
 ;
 
-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php83());
+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84());
 $config
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
@@ -66,8 +67,8 @@ Optionally override rules from a rule set by passing in an array of rules to be 
      ])
  ;
 
--$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php83());
-+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php83(), [
+-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84());
++$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84(), [
 +    'strict_comparison' => false,
 +]);
  $config

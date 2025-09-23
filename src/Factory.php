@@ -9,7 +9,7 @@ use PhpCsFixer\Config;
 final class Factory
 {
     /**
-     * @psalm-param array<string, array|bool> $overrideRules
+     * @psalm-param array<string, array<string, mixed>|bool> $overrideRules
      */
     public static function fromRuleSet(RuleSetInterface $ruleSet, array $overrideRules = []): Config
     {

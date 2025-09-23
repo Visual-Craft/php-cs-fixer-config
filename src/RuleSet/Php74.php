@@ -4,15 +4,38 @@ declare(strict_types=1);
 
 namespace VisualCraft\PhpCsFixerConfig\RuleSet;
 
+use PhpCsFixerCustomFixers\Fixer\CommentSurroundedBySpacesFixer;
+use PhpCsFixerCustomFixers\Fixer\MultilineCommentOpeningClosingAloneFixer;
+use PhpCsFixerCustomFixers\Fixer\NoDoctrineMigrationsGeneratedCommentFixer;
+use PhpCsFixerCustomFixers\Fixer\NoDuplicatedImportsFixer;
+use PhpCsFixerCustomFixers\Fixer\NoImportFromGlobalNamespaceFixer;
+use PhpCsFixerCustomFixers\Fixer\NoLeadingSlashInGlobalNamespaceFixer;
+use PhpCsFixerCustomFixers\Fixer\NoNullableBooleanTypeFixer;
+use PhpCsFixerCustomFixers\Fixer\NoPhpStormGeneratedCommentFixer;
+use PhpCsFixerCustomFixers\Fixer\NoSuperfluousConcatenationFixer;
+use PhpCsFixerCustomFixers\Fixer\NoUselessCommentFixer;
+use PhpCsFixerCustomFixers\Fixer\NoUselessDoctrineRepositoryCommentFixer;
+use PhpCsFixerCustomFixers\Fixer\NoUselessParenthesisFixer;
+use PhpCsFixerCustomFixers\Fixer\NoUselessStrlenFixer;
+use PhpCsFixerCustomFixers\Fixer\PhpdocNoSuperfluousParamFixer;
+use PhpCsFixerCustomFixers\Fixer\PhpdocTypesTrimFixer;
+use PhpCsFixerCustomFixers\Fixer\SingleSpaceAfterStatementFixer;
+use PhpCsFixerCustomFixers\Fixer\SingleSpaceBeforeStatementFixer;
+use PhpCsFixerCustomFixers\Fixers;
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
+/**
+ * @psalm-suppress UnusedClass
+ */
 final class Php74 implements RuleSetInterface
 {
+    #[\Override]
     public function name(): string
     {
         return 'Visual Craft (PHP 7.4)';
     }
 
+    #[\Override]
     public function rules(): array
     {
         return [
@@ -68,39 +91,37 @@ final class Php74 implements RuleSetInterface
                     'while',
                 ],
             ],
-            \PhpCsFixerCustomFixers\Fixer\CommentSurroundedBySpacesFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoDuplicatedImportsFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoImportFromGlobalNamespaceFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoLeadingSlashInGlobalNamespaceFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoNullableBooleanTypeFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoPhpStormGeneratedCommentFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoSuperfluousConcatenationFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoUselessCommentFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoUselessDoctrineRepositoryCommentFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoUselessParenthesisFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\NoUselessStrlenFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\PhpdocNoSuperfluousParamFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\PhpdocTypesTrimFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\SingleSpaceAfterStatementFixer::name() => true,
-            \PhpCsFixerCustomFixers\Fixer\SingleSpaceBeforeStatementFixer::name() => true,
+            CommentSurroundedBySpacesFixer::name() => true,
+            MultilineCommentOpeningClosingAloneFixer::name() => true,
+            NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
+            NoDuplicatedImportsFixer::name() => true,
+            NoImportFromGlobalNamespaceFixer::name() => true,
+            NoLeadingSlashInGlobalNamespaceFixer::name() => true,
+            NoNullableBooleanTypeFixer::name() => true,
+            NoPhpStormGeneratedCommentFixer::name() => true,
+            NoSuperfluousConcatenationFixer::name() => true,
+            NoUselessCommentFixer::name() => true,
+            NoUselessDoctrineRepositoryCommentFixer::name() => true,
+            NoUselessParenthesisFixer::name() => true,
+            NoUselessStrlenFixer::name() => true,
+            PhpdocNoSuperfluousParamFixer::name() => true,
+            PhpdocTypesTrimFixer::name() => true,
+            SingleSpaceAfterStatementFixer::name() => true,
+            SingleSpaceBeforeStatementFixer::name() => true,
             'PedroTroller/ordered_with_getter_and_setter_first' => true,
-            'PedroTroller/line_break_between_method_arguments' => [
-                'max-args' => false,
-                'max-length' => 120,
-                'automatic-argument-merge' => true,
-            ],
             'PedroTroller/line_break_between_statements' => true,
+            'method_chaining_indentation' => false,
         ];
     }
 
+    #[\Override]
     public function getCustomFixers(): iterable
     {
-        yield from new \PhpCsFixerCustomFixers\Fixers();
+        yield from new Fixers();
         yield from new \PedroTroller\CS\Fixer\Fixers();
     }
 
+    #[\Override]
     public function getRiskyAllowed(): bool
     {
         return true;

@@ -32,27 +32,30 @@ use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 /**
  * @psalm-suppress UnusedClass
  */
-final class Php80 implements RuleSetInterface
+final class Php84 implements RuleSetInterface
 {
     #[\Override]
     public function name(): string
     {
-        return 'Visual Craft (PHP 8.0)';
+        return 'Visual Craft (PHP 8.4)';
     }
 
+    /**
+     * @psalm-return array<string, array<string, mixed>|bool>
+     */
     #[\Override]
     public function rules(): array
     {
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP80Migration' => true,
+            '@PHP83Migration' => true,
             '@PHP80Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
             'doctrine_annotation_braces' => false,
-            '@PHPUnit84Migration:risky' => true,
+            '@PHPUnit100Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [
