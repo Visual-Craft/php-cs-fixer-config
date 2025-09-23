@@ -29,9 +29,6 @@ use PhpCsFixerCustomFixers\Fixer\StringableInterfaceFixer;
 use PhpCsFixerCustomFixers\Fixers;
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
-/**
- * @psalm-suppress UnusedClass
- */
 final class Php82 implements RuleSetInterface
 {
     #[\Override]

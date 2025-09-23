@@ -24,9 +24,6 @@ use PhpCsFixerCustomFixers\Fixer\SingleSpaceBeforeStatementFixer;
 use PhpCsFixerCustomFixers\Fixers;
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
-/**
- * @psalm-suppress UnusedClass
- */
 final class Php74 implements RuleSetInterface
 {
     #[\Override]
