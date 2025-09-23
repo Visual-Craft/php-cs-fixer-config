@@ -16,7 +16,7 @@ interface RuleSetInterface
     /**
      * Returns an array of rules along with their configuration.
      *
-     * @psalm-return array<string, array|bool>
+     * @psalm-return array<string, array<string, mixed>|bool>
      */
     public function rules(): array;
 

@@ -19,5 +19,6 @@
                 <directory name="src"/>
             </errorLevel>
         </MixedReturnTypeCoercion>
+        <UnusedClass errorLevel="suppress"/>
     </issueHandlers>
 </psalm>

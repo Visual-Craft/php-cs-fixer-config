@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Finder;
 use VisualCraft\PhpCsFixerConfig;
 
-$finder = PhpCsFixer\Finder::create()
+$finder = Finder::create()
     ->in(__DIR__ . '/src')
     ->append([
         __DIR__ . '/.php-cs-fixer.dist.php',
