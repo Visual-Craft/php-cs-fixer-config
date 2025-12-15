@@ -50,7 +50,7 @@ final class Php84 implements RuleSetInterface
             '@PHP8x4Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
-            '@PHPUnit10x0Migration:risky' => true,
+            '@PHPUnit11x0Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [
