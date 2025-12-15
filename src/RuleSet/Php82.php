@@ -44,7 +44,7 @@ final class Php82 implements RuleSetInterface
             '@Symfony' => true,
             '@Symfony:risky' => true,
             '@PHP8x2Migration' => true,
-            '@PHP8x0Migration:risky' => true,
+            '@PHP8x2Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,

@@ -47,7 +47,7 @@ final class Php84 implements RuleSetInterface
             '@Symfony' => true,
             '@Symfony:risky' => true,
             '@PHP8x4Migration' => true,
-            '@PHP8x2Migration:risky' => true,
+            '@PHP8x4Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@PHPUnit10x0Migration:risky' => true,

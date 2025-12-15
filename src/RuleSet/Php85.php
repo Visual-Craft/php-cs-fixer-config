@@ -46,8 +46,7 @@ final class Php85 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP8x2Migration:risky' => true,
-            '@PHP8x4Migration' => true,
+            '@PHP8x5Migration:risky' => true,
             '@PHP8x5Migration' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,

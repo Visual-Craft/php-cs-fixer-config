@@ -44,7 +44,7 @@ final class Php81 implements RuleSetInterface
             '@Symfony' => true,
             '@Symfony:risky' => true,
             '@PHP8x1Migration' => true,
-            '@PHP8x0Migration:risky' => true,
+            '@PHP8x1Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
