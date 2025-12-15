@@ -43,13 +43,13 @@ final class Php81 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP81Migration' => true,
-            '@PHP80Migration:risky' => true,
+            '@PHP8x1Migration' => true,
+            '@PHP8x0Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
             'doctrine_annotation_braces' => false,
-            '@PHPUnit84Migration:risky' => true,
+            '@PHPUnit8x4Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [

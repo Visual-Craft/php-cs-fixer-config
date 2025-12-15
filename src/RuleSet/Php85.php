@@ -29,12 +29,12 @@ use PhpCsFixerCustomFixers\Fixer\StringableInterfaceFixer;
 use PhpCsFixerCustomFixers\Fixers;
 use VisualCraft\PhpCsFixerConfig\RuleSetInterface;
 
-final class Php84 implements RuleSetInterface
+final class Php85 implements RuleSetInterface
 {
     #[\Override]
     public function name(): string
     {
-        return 'Visual Craft (PHP 8.4)';
+        return 'Visual Craft (PHP 8.5)';
     }
 
     /**
@@ -46,8 +46,9 @@ final class Php84 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP8x4Migration' => true,
             '@PHP8x2Migration:risky' => true,
+            '@PHP8x4Migration' => true,
+            '@PHP8x5Migration' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@PHPUnit10x0Migration:risky' => true,

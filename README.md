@@ -21,6 +21,7 @@ Pick one of the rule sets:
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php82`](src/RuleSet/Php82.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php83`](src/RuleSet/Php83.php)
 * [`VisualCraft\PhpCsFixerConfig\RuleSet\Php84`](src/RuleSet/Php84.php)
+* [`VisualCraft\PhpCsFixerConfig\RuleSet\Php85`](src/RuleSet/Php85.php)
 
 Create a configuration file `.php-cs-fixer.dist.php` in the root of your project:
 
@@ -29,17 +30,20 @@ Create a configuration file `.php-cs-fixer.dist.php` in the root of your project
 
 declare(strict_types=1);
 
-use VisualCraft\PhpCsFixerConfig;
+use PhpCsFixer\Finder;
+use VisualCraft\PhpCsFixerConfig\Factory;
+use VisualCraft\PhpCsFixerConfig\RuleSet\Php85;
 
-$finder = PhpCsFixer\Finder::create()
+$finder = Finder::create()
     ->in(__DIR__ . '/src')
     ->append([
         __DIR__ . '/.php-cs-fixer.dist.php',
     ])
 ;
 
-$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84());
+$config = Factory::fromRuleSet(new Php85());
 $config
+    ->setUnsupportedPhpVersionAllowed(true)
     ->setFinder($finder)
     ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
 ;
@@ -58,20 +62,26 @@ Optionally override rules from a rule set by passing in an array of rules to be 
 
  declare(strict_types=1);
 
- use VisualCraft\PhpCsFixerConfig;
+use PhpCsFixer\Finder;
+use VisualCraft\PhpCsFixerConfig\Factory;
+use VisualCraft\PhpCsFixerConfig\RuleSet\Php85;
 
- $finder = PhpCsFixer\Finder::create()
-     ->in(__DIR__ . '/src')
-     ->append([
-         __DIR__ . '/.php-cs-fixer.dist.php',
-     ])
- ;
+$finder = Finder::create()
+    ->in(__DIR__ . '/src')
+    ->in(__DIR__ . '/tests')
+    ->in(__DIR__ . '/migrations')
+    ->append([
+        __DIR__ . '/.twig_cs.dist',
+        __DIR__ . '/.php-cs-fixer.dist.php',
+    ])
+;
 
--$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84());
-+$config = PhpCsFixerConfig\Factory::fromRuleSet(new PhpCsFixerConfig\RuleSet\Php84(), [
+-$config = Factory::fromRuleSet(new Php85());
++$config = Factory::fromRuleSet(new Php85(), [
 +    'strict_comparison' => false,
 +]);
  $config
+     ->setUnsupportedPhpVersionAllowed(true)
      ->setFinder($finder)
      ->setCacheFile(__DIR__ . '/.php-cs-fixer.cache')
  ;
@@ -88,7 +98,7 @@ If you like [`composer` scripts](https://getcomposer.org/doc/articles/scripts.md
  {
    "name": "foo/bar",
    "require": {
-     "php": "^7.4",
+     "php": "^8.5",
    },
    "require-dev": {
      "visual-craft/php-cs-fixer-config": "*"

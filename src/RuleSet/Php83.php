@@ -43,13 +43,13 @@ final class Php83 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP83Migration' => true,
-            '@PHP80Migration:risky' => true,
+            '@PHP8x3Migration' => true,
+            '@PHP8x0Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
             'doctrine_annotation_braces' => false,
-            '@PHPUnit100Migration:risky' => true,
+            '@PHPUnit10x0Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [

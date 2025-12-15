@@ -38,13 +38,13 @@ final class Php74 implements RuleSetInterface
         return [
             '@Symfony' => true,
             '@Symfony:risky' => true,
-            '@PHP74Migration' => true,
-            '@PHP74Migration:risky' => true,
+            '@PHP7x4Migration' => true,
+            '@PHP7x4Migration:risky' => true,
             '@PhpCsFixer' => true,
             '@PhpCsFixer:risky' => true,
             '@DoctrineAnnotation' => true,
             'doctrine_annotation_braces' => false,
-            '@PHPUnit84Migration:risky' => true,
+            '@PHPUnit8x4Migration:risky' => true,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
             'array_syntax' => [
